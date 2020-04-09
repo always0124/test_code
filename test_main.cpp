@@ -1,6 +1,6 @@
 #include "my_curlpp.h"
 
-int main()
+void main()
 {
     Mycurlpp::test();
 }

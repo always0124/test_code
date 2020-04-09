@@ -42,9 +42,9 @@ int main(void)
         // 当有客户端发起连接时，服务器调用的 accept() 返回并接受这个连接，
         // 如果有大量的客户端发起连接而服务器来不及处理，尚未 accept 的客户端就处于连接等待状态。
         connfd = accept(listenfd, (struct sockaddr *)&cliaddr, &cliaddr_len);
-        printf("accept one client\n");
       
         n = read(connfd, buf, MAXLINE);
+        printf("accept one client, content:%s\n", buf);
         //printf("received from %s at PORT %d\n", inet_ntop(AF_INET, &cliaddr.sin_addr, str, sizeof(str)), ntohs(cliaddr.sin_port));
     
         for (i = 0; i < n; i++)
