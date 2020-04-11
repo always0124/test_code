@@ -94,8 +94,8 @@ int main()
     double min_month_pay = 4921;
     //calc_with_min(all_loan, all_loan, loan_months, min_month_pay, 1);
     
-    double cur_all_loan = all_loan - 28886.26;
-    int cur_loan_months = 23*12 - 16;
+    double cur_all_loan = all_loan - 25545.81;
+    int cur_loan_months = 25*12 - 15;
     calc(cur_all_loan, cur_loan_months);
     
 

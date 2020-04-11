@@ -37,11 +37,11 @@ int main(int argc, char *argv[])
     printf("connect with server\n");
 
     write(sockfd, str, strlen(str));
-    printf("write data\n");
+    printf("write data: %s\n", str);
 
     n = read(sockfd, buf, MAXLINE);
-    printf("Response from server:\n");
-    write(STDOUT_FILENO, buf, n);
+    printf("Response from server: %s\n", buf);
+    //write(STDOUT_FILENO, buf, n);
     printf("\n");
     close(sockfd);
     return 0;

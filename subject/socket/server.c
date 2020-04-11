@@ -32,7 +32,7 @@ int main(void)
 
     // listen() 声明 listenfd 处于监听状态，
     // 并且最多允许有 20 个客户端处于连接待状态，如果接收到更多的连接请求就忽略。
-    listen(listenfd, 20);
+    listen(listenfd, 8);
 
     printf("Accepting connections ...\n");
     while (1)
@@ -45,13 +45,14 @@ int main(void)
       
         n = read(connfd, buf, MAXLINE);
         printf("accept one client, content:%s\n", buf);
+        fflush(stdout);
         //printf("received from %s at PORT %d\n", inet_ntop(AF_INET, &cliaddr.sin_addr, str, sizeof(str)), ntohs(cliaddr.sin_port));
     
         for (i = 0; i < n; i++)
         {
             buf[i] = toupper(buf[i]);
         }
-            
+        sleep(4);
         write(connfd, buf, n);
         close(connfd);
     }
