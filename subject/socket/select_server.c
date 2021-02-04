@@ -25,8 +25,10 @@ int main()
     server_len = sizeof(server_address); 
     bind(server_sockfd, (struct sockaddr *)&server_address, server_len); 
     listen(server_sockfd, CONN_NUM); //监听队列最多容纳5个 
+        printf("listen: s_socket: %d\n", server_sockfd); 
     FD_ZERO(&readfds); 
     FD_SET(server_sockfd, &readfds);//将服务器端socket加入到集合中
+        printf("fd_set: s_socket: %d\n", server_sockfd); 
     while(1) 
     {
         char ch[1024]; 

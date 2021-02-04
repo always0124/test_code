@@ -121,7 +121,7 @@ int main()
                 }
                 //设置用于写操作的文件描述符
                 ev.data.fd = sockfd;
-                //设置用于注测的写操作事件
+                //设置用于注册的写操作事件
                 ev.events = EPOLLOUT | EPOLLET;
                 //修改sockfd上要处理的事件为EPOLLOUT
                 epoll_ctl(epfd, EPOLL_CTL_MOD, sockfd, &ev);

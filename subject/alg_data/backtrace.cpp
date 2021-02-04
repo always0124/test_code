@@ -75,6 +75,29 @@ int totalNQueens(int n) {
     return res;
 }
 
+string getPermutation(int n, int k) {
+    vector<char> vec;
+    for (int i = 1; i <= n; ++ i) {
+        vec.push_back(i+'0');
+    }
+    int max = 1;
+    for (int i = n; i > 0; --i) {
+        max *= i;
+    }
+    string res("");
+    for (int i = n; i > 0; -- i) {
+        int one = max / i;
+        int index = k / one;
+        if (k % one == 0) {index--;}
+        res.push_back(vec[index]);
+        k = k - index * one;
+        max = one;
+        vec.erase(vec.begin()+index); 
+    }
+    return res;
+}
+
 void test_backtrace() {
-    totalNQueens(4);
+    string res = getPermutation(4, 9);
+    cout << res << endl;
 }

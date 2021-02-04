@@ -1,0 +1,17 @@
+Src = []
+Src += Split(Glob('src/*.cpp'))
+
+
+ThirdLib = Split('pthread rt')
+
+Libs = ThirdLib
+
+Include = []
+Include += ['include/crypto++/']
+
+Libpath = []
+
+CCFlags = Split('-g -O2')
+
+Library(target = 'lib/crypto++',source = Src,LIBS = Libs,LIBPATH = Libpath,CPPPATH = Include,CCFLAGS = CCFlags)
+

@@ -8,13 +8,17 @@
 #include "math.cpp"
 #include "string.cpp"
 #include "stack.cpp"
+#include "sort.cpp"
+#include "trie.cpp"
 #include "two_pointer.cpp"
 
 using namespace std;
 
 int main()
 {
-    test_backtrace();
+    //test_trie();
+    test_sort();
+    //test_backtrace();
     //test_hash();
     //test_binary_search();
     //test_math();
